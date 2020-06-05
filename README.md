@@ -1,12 +1,12 @@
 # Spotifly (Spotify clone)
 Legacy code description:
-The application is intendted to be a clone of the UI of spotify. 
-The specific component is the related artists that renders a list
+The application is intended to be a clone of the UI of spotify. 
+The specific component is the related artists widget that renders a list
 of related artists. The app is a microservice of the whole page which
 is shown here.
 
 SDC description:
-Built two database systems for one express server.These databses are a MongDb and a PostgresQl databse with redis cacheing database for performance. These databases are connected to the front end client via multiple endpoints and have been tested to reach 900 + request per-second. A MVC architecture hs been utilized and is arranged as such.
+Built two back-end database systems for one express server.These databases are a MongDb and a PostgresQl database with Redis cacheing database for performance. The databases are connected to the front-end client via multiple endpoints and have been tested to reach 900 + request per-second locally and over 12000 rps deployed. A MVC architecture hs been utilized and the file structure is arranged as such.
 
 ![Spotifly Page](https://github.com/juicy-fec/related-artists-client/blob/master/FECdemo.png)
 
