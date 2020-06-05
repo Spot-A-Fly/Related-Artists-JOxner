@@ -1,4 +1,3 @@
-
 module.exports = {
   getRandomIdFirstHalf: (context, events, done) => {
     context.vars.id = Math.floor(Math.random() * 5000000) + 1;

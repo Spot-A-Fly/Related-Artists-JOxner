@@ -24,7 +24,7 @@ class ArtistList extends React.Component {
     // const newstate = [];
 
     getRelatedArtist(1)
-      .then((data) => this.setState({ artists: data.artists }))
+      .then((data) => this.setState({ artists: data.artist }))
       .catch((err) => console.log(err));
 
     // this.props.artist.relatedArtists.forEach((relatedartist) => {

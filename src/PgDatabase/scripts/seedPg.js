@@ -27,14 +27,14 @@ const createRelatedArtists = () => {
 };
 
 const seedPgDatabase1 = () => {
-  const pathToCSV = path.resolve(__dirname, '../../artists.csv');
+  const pathToCSV = process.env.NODE_ENV === 'prod' ? '/home/bitnami/seed_files/artists.csv' : path.resolve(__dirname, '../../artists.csv');
   const delimiter = ',';
   const sqlString = `COPY artists(artistId, artistName, avatar, bio) FROM '${pathToCSV}' DELIMITER '${delimiter}' CSV HEADER`;
   return pgdb.query(sqlString);
 };
 
 const seedPgDatabase2 = () => {
-  const pathToCSV = path.resolve(__dirname, '../../relatedArtists.csv');
+  const pathToCSV = process.env.NODE_ENV === 'prod' ? '/home/bitnami/seed_files/relatedartists.csv' : path.resolve(__dirname, '../../relatedArtists.csv');
   const delimiter = ',';
   const sqlString = `COPY relatedArtists(artistId1, artistId2) FROM '${pathToCSV}' DELIMITER '${delimiter}' CSV HEADER`;
   return pgdb.query(sqlString);

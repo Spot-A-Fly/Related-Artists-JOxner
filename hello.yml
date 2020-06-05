@@ -1,15 +1,21 @@
 config:
-  target: "http://localhost:3030"
+  target: "http://music-manager-lb1-1874894385.us-east-2.elb.amazonaws.com/#related"
   phases:
-    - duration: 15
-      arrivalRate: 5
-      name: "Warm up the application"
-    - duration: 20
-      arrivalRate: 8
-      name: "Sustained max load"
-    - duration: 20
-      arrivalRate: 7
-      name: "Cool it down"
+  - duration: 30
+    arrivalRate: 4
+    name: "Warm up the application"
+  - duration: 10
+    arrivalRate: 15
+    name: "High load"
+  - duration: 30
+    arrivalRate: 4
+    name: "Normal load"
+  - duration: 5
+    arrivalRate: 20
+    name: "Quick spike"
+  - duration: 20
+    arrivalRate: 3
+    name: "Cool down"
   processor: "./artillery_functions.js"
 scenarios: 
   - flow: 
@@ -27,5 +33,5 @@ scenarios:
       - function: "getRandomIdTenPercent"
       - get:
           url: "/data/artist?artistId={{ id }}"
-      count: 52
+      count: 45
 

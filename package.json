@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "System Data Capstone",
   "scripts": {
+    "build": "webpack -p",
+    "start": "node src/server/index.js",
     "artillery": "artillery run hello.yml",
-    "seed-pg-db": "node src/PgDatabase/seedPgCsv.js && node src/PgDatabase/seedPgRelated.js && node src/PgDatabase/seedPg.js",
+    "seed-pg-csv": "node src/PgDatabase/scripts/seedPgCsv.js && node src/PgDatabase/scripts/seedPgRelated.js ",
+    "seed-pg": "node src/PgDatabase/scripts/seedPg.js",
     "seed-mongo-db": "node src/mongoDatabase/scripts/seedMongo.js && mongoimport -d artistsdb -c artists --type csv --file artists.csv --headerline",
     "client-dev": "webpack -d --watch",
     "server-dev": "nodemon src/server/index.js",
     "test": "jest --coverage",
     "lint": "eslint app.js",
     "deploy": "npm run server-dev && npm run seed-pg-db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Spot-A-Fly/SDC-Related-Artists_Module-JOxner"
   },
   "author": "Joshua Oxner",
   "license": "ISC",
@@ -41,6 +48,7 @@
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-15": "^1.4.1",
     "eslint-config-airbnb-standard": "^3.1.0",
@@ -48,6 +56,7 @@
     "faker": "^4.1.0",
     "fast-csv": "^4.2.0",
     "file-system": "^2.2.2",
+    "ioredis": "^4.17.3",
     "jest": "^26.0.1",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.15",

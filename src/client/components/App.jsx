@@ -5,20 +5,20 @@ import ArtistList from './ArtistList.jsx';
 import ArtistMenu from './ArtistMenu.jsx';
 
 
-const widthandheight = (windowsize) => {
-  let size;
-  const { width } = windowsize;
-  if (width < 767) {
-    size = { width: '33%', height: '33%' };
-  } else if (width >= 767 && width < 996) {
-    size = { width: '25%', height: '25%' };
-  } else if (width >= 996 && width < 1200) {
-    size = { width: '16%', height: '16%' };
-  } else {
-    size = { width: '10%', height: '10%' };
-  }
-  return size;
-};
+// const widthandheight = (windowsize) => {
+//   let size;
+//   const { width } = windowsize;
+//   if (width < 767) {
+//     size = { width: '33%', height: '33%' };
+//   } else if (width >= 767 && width < 996) {
+//     size = { width: '25%', height: '25%' };
+//   } else if (width >= 996 && width < 1200) {
+//     size = { width: '16%', height: '16%' };
+//   } else {
+//     size = { width: '10%', height: '10%' };
+//   }
+//   return size;
+// };
 
 const AppStyle = styled.div`
   min-height: 100%;
@@ -50,8 +50,8 @@ class App extends React.Component {
 
   handlerightclick(event) {
     event.preventDefault();
-    const classtype = event.target.className.split('__')[0];
-    if (classtype === 'Artist') {
+    const classtype = event.target.alt;
+    if (classtype === 'related artist') {
       this.setState({ showmenu: true });
       const newpos = { left: event.pageX + 10, top: event.pageY + 10 };
       this.setState({ menuposition: newpos });
