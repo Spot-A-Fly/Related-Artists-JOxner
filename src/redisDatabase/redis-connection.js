@@ -5,7 +5,7 @@ const redis = new Redis(config.cache);
 
 redis.config('SET', 'maxmemory', '200mb')
   .then(() => redis.config('SET', 'maxmemory-policy', 'allkeys-lru'));
-// .then(() => redis.flushall()) // to flush redis
+// .then(() => redis.flushall()) // to flush redis // <==== used to flush redis
 const addToCache = (key, value) => redis.set(key, JSON.stringify(value));
 
 const retrieveFromCache = (key) => redis.get(key)

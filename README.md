@@ -3,7 +3,7 @@ Legacy code description:
 The application is intended to be a clone of the UI of spotify. 
 The specific component is the related artists widget that renders a list
 of related artists. The app is a microservice of the whole page which
-is shown here.
+is shown here. The front end is not my work!!!!
 
 SDC description:
 Built two back-end database systems for one express server.These databases are a MongDb and a PostgresQl database with Redis cacheing database for performance. The databases are connected to the front-end client via multiple endpoints and have been tested to reach 900 + request per-second locally and over 12000 rps deployed. A MVC architecture hs been utilized and the file structure is arranged as such.

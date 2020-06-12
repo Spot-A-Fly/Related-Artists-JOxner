@@ -66,9 +66,7 @@ class App extends React.Component {
 
   fetchArtistData() {
     // need to find an initial artist.
-    fetch(`/data/artist?artistId=${this.state.artistid}`).then((response) => {
-      return response.json();
-    }).then((data) => {
+    fetch(`/data/artist?artistId=${this.state.artistid}`).then((response) => response.json()).then((data) => {
       // console.log(data.relatedArtists[0]);
       let param = {};
       if (data !== null) {
@@ -92,16 +90,11 @@ class App extends React.Component {
     } else {
       menu = <div />;
     }
-    if (window.location.hash === '#related') {
-      return (
-        <AppStyle>
-          {menu}
-          {component}
-        </AppStyle>
-      );
-    }
     return (
-      <div />
+      <AppStyle>
+        {menu}
+        {component}
+      </AppStyle>
     );
   }
 }
