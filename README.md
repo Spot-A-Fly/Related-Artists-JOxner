@@ -1,4 +1,7 @@
 # Spotifly (Spotify clone)
+![](MusicManagerDemo.gif)
+
+
 Legacy code description:
 The application is intended to be a clone of the UI of spotify. 
 The specific component is the related artists widget that renders a list
@@ -8,12 +11,12 @@ is shown here. The front end is not my work!!!!
 SDC description:
 Built two back-end database systems for one express server.These databases are a MongDb and a PostgresQl database with Redis cacheing database for performance. The databases are connected to the front-end client via multiple endpoints and have been tested to reach 900 + request per-second locally and over 12000 rps deployed. A MVC architecture hs been utilized and the file structure is arranged as such.
 
-![Spotifly Page](https://github.com/juicy-fec/related-artists-client/blob/master/FECdemo.png)
+![Legacy Code](https://github.com/juicy-fec/related-artists-client/blob/master/FECdemo.png)
 
 ## Related Projects
 
-  - https://github.com/juicy-fec/related-artists-proxy - legacy code
-  - https://github.com/Spot-A-Fly/SDC-Related-Artists_Module-JOxner - new code
+  - https://github.com/juicy-fec/related-artists-proxy - Legacy code
+  - https://github.com/Spot-A-Fly/Related-Artists-JOxner - New code
 
 ## Table of Contents
 1. [Technologies](#Technologies)
